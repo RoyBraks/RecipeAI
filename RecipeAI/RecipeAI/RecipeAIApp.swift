@@ -11,7 +11,7 @@ import SwiftUI
 struct RecipeAIApp: App {
     var body: some Scene {
         WindowGroup {
-            ApiTest()
+            FilterView()
         }
     }
 }

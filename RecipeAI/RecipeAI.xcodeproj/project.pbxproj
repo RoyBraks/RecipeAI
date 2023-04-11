@@ -8,8 +8,11 @@
 
 /* Begin PBXBuildFile section */
 		3344A01829DD655B001C70C5 /* APICallExplore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344A01729DD655B001C70C5 /* APICallExplore.swift */; };
-		3344A01A29DD7052001C70C5 /* ApiTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344A01929DD7052001C70C5 /* ApiTest.swift */; };
+		3344A01A29DD7052001C70C5 /* ExplorePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344A01929DD7052001C70C5 /* ExplorePage.swift */; };
 		3344A01C29DD71F4001C70C5 /* RecipeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3344A01B29DD71F4001C70C5 /* RecipeModel.swift */; };
+		33CE535029DEC51800E36A07 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 33CE534F29DEC51800E36A07 /* Kingfisher */; };
+		33CE535229DEDBCF00E36A07 /* FilterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE535129DEDBCF00E36A07 /* FilterView.swift */; };
+		33CE535429DEE30700E36A07 /* FilterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33CE535329DEE30700E36A07 /* FilterViewModel.swift */; };
 		35B07B9629DB265D00E558D5 /* RecipeAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B07B9529DB265D00E558D5 /* RecipeAIApp.swift */; };
 		35B07B9829DB265D00E558D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B07B9729DB265D00E558D5 /* ContentView.swift */; };
 		35B07B9A29DB265E00E558D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B07B9929DB265E00E558D5 /* Assets.xcassets */; };
@@ -18,8 +21,10 @@
 
 /* Begin PBXFileReference section */
 		3344A01729DD655B001C70C5 /* APICallExplore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICallExplore.swift; sourceTree = "<group>"; };
-		3344A01929DD7052001C70C5 /* ApiTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTest.swift; sourceTree = "<group>"; };
+		3344A01929DD7052001C70C5 /* ExplorePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExplorePage.swift; sourceTree = "<group>"; };
 		3344A01B29DD71F4001C70C5 /* RecipeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeModel.swift; sourceTree = "<group>"; };
+		33CE535129DEDBCF00E36A07 /* FilterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterView.swift; sourceTree = "<group>"; };
+		33CE535329DEE30700E36A07 /* FilterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewModel.swift; sourceTree = "<group>"; };
 		35B07B9229DB265D00E558D5 /* RecipeAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B07B9529DB265D00E558D5 /* RecipeAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAIApp.swift; sourceTree = "<group>"; };
 		35B07B9729DB265D00E558D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -32,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CE535029DEC51800E36A07 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,9 +49,19 @@
 			children = (
 				3344A01729DD655B001C70C5 /* APICallExplore.swift */,
 				3344A01B29DD71F4001C70C5 /* RecipeModel.swift */,
-				3344A01929DD7052001C70C5 /* ApiTest.swift */,
+				3344A01929DD7052001C70C5 /* ExplorePage.swift */,
+				33CE535529DEE30C00E36A07 /* Filter */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		33CE535529DEE30C00E36A07 /* Filter */ = {
+			isa = PBXGroup;
+			children = (
+				33CE535129DEDBCF00E36A07 /* FilterView.swift */,
+				33CE535329DEE30700E36A07 /* FilterViewModel.swift */,
+			);
+			path = Filter;
 			sourceTree = "<group>";
 		};
 		35B07B8929DB265D00E558D5 = {
@@ -100,6 +116,9 @@
 			dependencies = (
 			);
 			name = RecipeAI;
+			packageProductDependencies = (
+				33CE534F29DEC51800E36A07 /* Kingfisher */,
+			);
 			productName = RecipeAI;
 			productReference = 35B07B9229DB265D00E558D5 /* RecipeAI.app */;
 			productType = "com.apple.product-type.application";
@@ -128,6 +147,9 @@
 				Base,
 			);
 			mainGroup = 35B07B8929DB265D00E558D5;
+			packageReferences = (
+				33CE534E29DEC51800E36A07 /* XCRemoteSwiftPackageReference "kingfisher" */,
+			);
 			productRefGroup = 35B07B9329DB265D00E558D5 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -154,10 +176,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				33CE535429DEE30700E36A07 /* FilterViewModel.swift in Sources */,
 				35B07B9829DB265D00E558D5 /* ContentView.swift in Sources */,
 				35B07B9629DB265D00E558D5 /* RecipeAIApp.swift in Sources */,
 				3344A01C29DD71F4001C70C5 /* RecipeModel.swift in Sources */,
-				3344A01A29DD7052001C70C5 /* ApiTest.swift in Sources */,
+				3344A01A29DD7052001C70C5 /* ExplorePage.swift in Sources */,
+				33CE535229DEDBCF00E36A07 /* FilterView.swift in Sources */,
 				3344A01829DD655B001C70C5 /* APICallExplore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +383,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		33CE534E29DEC51800E36A07 /* XCRemoteSwiftPackageReference "kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		33CE534F29DEC51800E36A07 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 33CE534E29DEC51800E36A07 /* XCRemoteSwiftPackageReference "kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 35B07B8A29DB265D00E558D5 /* Project object */;
 }
