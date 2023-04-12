@@ -12,9 +12,13 @@ class APICallExplore: ObservableObject {
 
     @Published var recipeImages = [String]()
     
-    let url = URL(string:"nog toevoegen")!
-
+    var apiCallLink = FilterViewModel()
+    
     func getRecipes() {
+        
+        let url = URL(string:apiCallLink.createApiLink())!
+        
+        print(apiCallLink.createApiLink())
 
         URLSession.shared.dataTask(with: url) { (data, response, error) in
             if let error = error {

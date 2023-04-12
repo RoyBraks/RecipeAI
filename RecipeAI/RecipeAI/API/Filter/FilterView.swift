@@ -10,8 +10,7 @@ import SwiftUI
 
 struct FilterView: View {
     @ObservedObject var filterViewModel = FilterViewModel()
-
-    
+        
     let layout = [
         GridItem(.flexible(), spacing: 0),
         GridItem(.flexible(), spacing: 0),
@@ -22,38 +21,39 @@ struct FilterView: View {
 
         VStack{
             VStack(alignment: .leading){
-                Button("test") {
-                    filterViewModel.createApiLink()
-                }
                 Text("Diet")
                     .font(.title2)
                     .fontWeight(.bold)
                 LazyVGrid(columns: layout) {
                     ForEach(filterViewModel.dietTypes.indices) { filter in
-
-                        if (!filterViewModel.dietTypesBool[filter]) {
                             
-                            Button(filterViewModel.dietTypes[filter]) {
-                                filterViewModel.dietTypesBool[filter] = true
-                                print(filterViewModel.dietTypesBool)
-                            }
-                            .multilineTextAlignment(.center)
-                            .buttonStyle(.bordered)
-                            .foregroundColor(Color.black)
-                            
-                        } else {
-                            Button(filterViewModel.dietTypes[filter]) {
-                                filterViewModel.dietTypesBool[filter] = false
-                                print(filterViewModel.dietTypesBool)
-                            }
-                            .tint(Color.green)
-                            .foregroundColor(Color.white)
-                            .buttonStyle(.borderedProminent)
+                            if (!(filterViewModel.dietTypesBool[filter])) {
+                                
+                                Button(filterViewModel.dietTypes[filter]) {
+                                    filterViewModel.dietTypesBool[filter] = true
+                                    UserDefaults.standard.set(filterViewModel.dietTypesBool, forKey: "filterDiet")
+                                    print(filterViewModel.dietTypesBool)
 
-                        }
+                                }
+                                .multilineTextAlignment(.center)
+                                .buttonStyle(.bordered)
+                                .foregroundColor(Color.black)
+                                
+                            } else {
+                                Button(filterViewModel.dietTypes[filter]) {
+                                    filterViewModel.dietTypesBool[filter] = false
+                                    UserDefaults.standard.set(filterViewModel.dietTypesBool, forKey: "filterDiet")
+                                    print(filterViewModel.dietTypesBool)
+                                }
+                                .tint(Color.green)
+                                .foregroundColor(Color.white)
+                                .buttonStyle(.borderedProminent)
+
+                            }
                     }
-                    .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
+                    
                 }
+                .frame(minWidth: 0, maxWidth: .infinity, alignment: .center)
             }
         }
         .padding()

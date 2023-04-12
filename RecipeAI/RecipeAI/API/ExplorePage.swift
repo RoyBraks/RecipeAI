@@ -10,6 +10,7 @@ import Kingfisher
 
 struct ExplorePage: View {
     
+    @ObservedObject var filterViewModel = FilterViewModel()
     @ObservedObject var apiCallExplore = APICallExplore()
 
     var body: some View {

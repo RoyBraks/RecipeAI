@@ -10,18 +10,20 @@ import Foundation
 class FilterViewModel: ObservableObject {
     @Published var dietTypes = ["High Fiber", "High Protein", "Low Carb", "Low Fat", "Low Sodium"]
     
-    @Published var dietTypesBool = [false, false, false, false, false]
-    
-    var startLink = "https://api.edamam.com/api/recipes/v2?type=public&app_id=104e9190&app_key=ddb3653ba1ff401aa1594cbbd3bc476b&"
-    
-    
-    func createApiLink() {
-        for (index,dietType) in dietTypesBool.enumerated() {
+    @Published var dietTypesBool = UserDefaults.standard.object(forKey: "filterDiet") as? [Bool] ?? [false, false, false, false, false]
+
+    func createApiLink() -> String {
+
+        var startLink = "https://api.edamam.com/api/recipes/v2?type=public&app_id=104e9190&app_key=ddb3653ba1ff401aa1594cbbd3bc476b&imageSize=SMALL&random=true"
+        
+        let savedFilters = UserDefaults.standard.object(forKey: "filterDiet") as? [Bool]
+        
+        for (index,dietType) in savedFilters!.enumerated() {
             
             if dietType {
                 switch index {
                 case 0:
-                    startLink.append("diet=high-fiber")
+                    startLink.append("&diet=high-fiber")
                 case 1:
                     startLink.append("&diet=high-protein")
                 case 2:
@@ -36,6 +38,7 @@ class FilterViewModel: ObservableObject {
             }
         }
         print(startLink)
+        return startLink
     }
 }
 
