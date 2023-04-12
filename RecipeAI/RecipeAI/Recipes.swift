@@ -11,7 +11,7 @@ class Recipes{
     init() {}
     
     public let ingredients = [
-        ["8 Chicken Tenders", "6 oz Fettuccine Pasta", "1 bunch Kale", "½ bunch Asparagus", "1 bunch Rosemary", "2 Tbsps Crème Fraîche", "2 Tbsps Grated Parmesan Cheese", "⅛ tsp Crushed Red Pepper Flakes"],
+        ["Name: Spring Chicken Fettuccine with Sautéed Asparagus, Kale & Rosemary:","8 Chicken Tenders", "6 oz Fettuccine Pasta", "1 bunch Kale", "½ bunch Asparagus", "1 bunch Rosemary", "2 Tbsps Crème Fraîche", "2 Tbsps Grated Parmesan Cheese", "⅛ tsp Crushed Red Pepper Flakes"],
         ["1 lb. dried elbow pasta",
          "1/2 cup unsalted butter",
          "1/2 cup all purpose flour",
@@ -23,6 +23,16 @@ class Recipes{
          "1/2 tsp. black pepper",
          "1/4 tsp. paprika]",
         ]
+    ]
+    
+    public let ingredientsGPT = [
+        [],
+        []
+    ]
+    
+    public let instructionsGPT = [
+        [],
+        []
     ]
     
     

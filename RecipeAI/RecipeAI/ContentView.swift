@@ -13,69 +13,48 @@ import OpenAISwift
 struct ContentView: View {
     @ObservedObject var viewModel = ViewModel()
     let recipes = Recipes()
-    @State var text = ""
+    let allPrompts = prompts()
+    @State var latestResponse = ""
+    @State var text = "Create the recipe based on the name and the ingredients"
     @State var models = [String]()
-    @State var prompt = "Change the ingredients and instructions accordingly to good taste. Then resend the ingredients and instructions with the changes added and reformat it nicely."
+    @State var ingredientsSelection = 0
 
+    var joinedArrayIngredients: String {
+            recipes.ingredients[0].joined(separator: "\n")
+        }
+    var joinedArrayInstructions: String {
+            recipes.instructions[0].joined(separator: "\n")
+        }
     
     var body: some View {
         ScrollView{
-            VStack(alignment: .leading){
-                ForEach(models, id: \.self){ string in
-                    Text(string)
-                }
-            }
-            
             Spacer()
-            HStack{
-//                TextField("Type here...", text: $text)
-                Text("Remove an ingredient")
-                    .contextMenu {
-                        Button {
-                            text = "Remove Chicken"
-                            send()
-                        } label: {
-                            Label("Chicken", systemImage: "list.clipboard")
-                        }
-
-                        Button {
-                            text = "Parmesan Cheese"
-                            send()
-                        } label: {
-                            Label("Parmesan Cheese", systemImage: "list.clipboard")
-                        }
-                        
-                        Button {
-                            text = "Remove Asparagus"
-                            send()
-                        } label: {
-                            Label("Asparagus", systemImage: "list.clipboard")
-                        }
-
-                        Button {
-                            text = "Remove Creme Fraiche"
-                            send()
-                        } label: {
-                            Label("Creme Fraiche", systemImage: "list.clipboard")
+            VStack{
+                NavigationView(){
+                    NavigationLink(destination: ButtonsPage(text: $text, sendAction: send)){
+                        VStack{
+                            HStack {
+                                Text("Change recipe")
+                                    .padding()
+                                Spacer(minLength: 0)
+                            }
+                            Spacer(minLength: 0)
                         }
                     }
+                }
+                .frame(height: 150, alignment: .leading)
+                .onAppear{
+                    send()
+                }
+                Text(latestResponse)
             }
-            Text(recipes.ingredients[0].joined(separator: "\n"))
-            
-            VStack(alignment: .leading, spacing: 8) {
-                ForEach(recipes.instructions[0], id: \.self) { instruction in
-                    Text(instruction)
-                        .padding()
-                        .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color.black, lineWidth: 2))
-            }
-            }
-//            Text(recipe)
         }
         .onAppear{
             viewModel.setup()
         }
         .padding()
     }
+
     
     func send() {
         guard !text.trimmingCharacters(in: .whitespaces).isEmpty else{
@@ -83,16 +62,62 @@ struct ContentView: View {
         }
         
 
-        @State var fullPrompt = "\(text) \(prompt) \(recipes.ingredients[0]) \(recipes.instructions[0])"
+        @State var fullPrompt = "\(text) \(allPrompts.prompt) \(joinedArrayIngredients)"
 
         viewModel.send(text: fullPrompt){ response in
-            DispatchQueue.main.async {
-                self.models.append("ChatGPT: \(response.trimmingCharacters(in: .whitespacesAndNewlines))")
+            DispatchQueue.main.async{
+                self.latestResponse = response.trimmingCharacters(in: .whitespacesAndNewlines)
                 self.text = ""
             }
         }
     }
 }
+
+struct ButtonsPage: View{
+    @Binding var text: String
+    let sendAction: () -> Void
+    
+    var body: some View {
+        Menu {
+            Button("Remove Chicken", action: {
+                text = "Remove Chicken"
+                sendAction ()
+            })
+            Button("Remove Asparagus", action: {
+                text = "Remove Asparagus"
+                sendAction()
+            })
+            Button("Remove Parmesan Cheese", action: {
+                text = "Remove Parmesan Cheese"
+                sendAction()
+            })
+            Button("Remove Creme Fraiche", action: {
+                text = "Remove Creme Fraiche"
+                sendAction()
+            })
+        } label: {
+            Text("Remove an ingredient")
+        }
+        
+        Menu {
+            Button("Make vegetarian", action: {
+                text = "Make it vegetarian"
+                sendAction ()
+            })
+            Button("Make vegan", action: {
+                text = "Make it vegan"
+                sendAction()
+            })
+            Button("Low-Calorie", action: {
+                text = "Change necessary ingredients to make meal lower in calories."
+                sendAction()
+            })
+        } label: {
+            Text("Change dish type")
+        }
+    }
+}
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3501B89E29DEF82A00690F22 /* Prompts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3501B89D29DEF82A00690F22 /* Prompts.swift */; };
+		352FAA8C29E6268600A0E58B /* ButtonsPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 352FAA8B29E6268600A0E58B /* ButtonsPage.swift */; };
 		35B07B9629DB265D00E558D5 /* RecipeAIApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B07B9529DB265D00E558D5 /* RecipeAIApp.swift */; };
 		35B07B9829DB265D00E558D5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B07B9729DB265D00E558D5 /* ContentView.swift */; };
 		35B07B9A29DB265E00E558D5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35B07B9929DB265E00E558D5 /* Assets.xcassets */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3501B89D29DEF82A00690F22 /* Prompts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompts.swift; sourceTree = "<group>"; };
+		352FAA8B29E6268600A0E58B /* ButtonsPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsPage.swift; sourceTree = "<group>"; };
 		35B07B9229DB265D00E558D5 /* RecipeAI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RecipeAI.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		35B07B9529DB265D00E558D5 /* RecipeAIApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeAIApp.swift; sourceTree = "<group>"; };
 		35B07B9729DB265D00E558D5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 			children = (
 				35B07B9529DB265D00E558D5 /* RecipeAIApp.swift */,
 				35B07B9729DB265D00E558D5 /* ContentView.swift */,
+				352FAA8B29E6268600A0E58B /* ButtonsPage.swift */,
+				3501B89D29DEF82A00690F22 /* Prompts.swift */,
 				35B07BC829DD8D5800E558D5 /* ViewModel.swift */,
 				35B07BC629DD844700E558D5 /* Recipes.swift */,
 				35B07B9929DB265E00E558D5 /* Assets.xcassets */,
@@ -152,6 +158,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B07B9829DB265D00E558D5 /* ContentView.swift in Sources */,
+				3501B89E29DEF82A00690F22 /* Prompts.swift in Sources */,
+				352FAA8C29E6268600A0E58B /* ButtonsPage.swift in Sources */,
 				35B07BC729DD844700E558D5 /* Recipes.swift in Sources */,
 				35B07BC929DD8D5800E558D5 /* ViewModel.swift in Sources */,
 				35B07B9629DB265D00E558D5 /* RecipeAIApp.swift in Sources */,
@@ -280,9 +288,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeAI/Preview Content\"";
+				DEVELOPMENT_TEAM = P2L789GVCJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -295,8 +305,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.lunis.ahdidouch.RecipeAI;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lunis.ahdidouch.RecipeAI1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -308,9 +319,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"RecipeAI/Preview Content\"";
+				DEVELOPMENT_TEAM = P2L789GVCJ;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -323,8 +336,9 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = me.lunis.ahdidouch.RecipeAI;
+				PRODUCT_BUNDLE_IDENTIFIER = me.lunis.ahdidouch.RecipeAI1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
