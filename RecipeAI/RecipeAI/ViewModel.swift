@@ -8,10 +8,6 @@
 import Foundation
 import OpenAISwift
 
-struct Model: Identifiable{
-    let id: UUID
-    let text: String
-}
 
 final class ViewModel: ObservableObject{
     

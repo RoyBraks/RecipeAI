@@ -16,6 +16,7 @@
 		35B07BA529DB271700E558D5 /* OpenAISwift in Frameworks */ = {isa = PBXBuildFile; productRef = 35B07BA429DB271700E558D5 /* OpenAISwift */; };
 		35B07BC729DD844700E558D5 /* Recipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B07BC629DD844700E558D5 /* Recipes.swift */; };
 		35B07BC929DD8D5800E558D5 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B07BC829DD8D5800E558D5 /* ViewModel.swift */; };
+		35CB9D9229E8051A001240F5 /* AiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35CB9D9129E8051A001240F5 /* AiView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		35B07B9C29DB265E00E558D5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		35B07BC629DD844700E558D5 /* Recipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipes.swift; sourceTree = "<group>"; };
 		35B07BC829DD8D5800E558D5 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		35CB9D9129E8051A001240F5 /* AiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AiView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +65,7 @@
 			children = (
 				35B07B9529DB265D00E558D5 /* RecipeAIApp.swift */,
 				35B07B9729DB265D00E558D5 /* ContentView.swift */,
+				35CB9D9129E8051A001240F5 /* AiView.swift */,
 				352FAA8B29E6268600A0E58B /* ButtonsPage.swift */,
 				3501B89D29DEF82A00690F22 /* Prompts.swift */,
 				35B07BC829DD8D5800E558D5 /* ViewModel.swift */,
@@ -160,6 +163,7 @@
 				35B07B9829DB265D00E558D5 /* ContentView.swift in Sources */,
 				3501B89E29DEF82A00690F22 /* Prompts.swift in Sources */,
 				352FAA8C29E6268600A0E58B /* ButtonsPage.swift in Sources */,
+				35CB9D9229E8051A001240F5 /* AiView.swift in Sources */,
 				35B07BC729DD844700E558D5 /* Recipes.swift in Sources */,
 				35B07BC929DD8D5800E558D5 /* ViewModel.swift in Sources */,
 				35B07B9629DB265D00E558D5 /* RecipeAIApp.swift in Sources */,
