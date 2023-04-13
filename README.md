@@ -1,5 +1,6 @@
 # Recipe AI
 
+Deze social media app is bedoeld voor het delen van recepten. Deze recepten kunnen persoonlijk aangepast worden door middel van GPT.
 
 
 ## Getting started
