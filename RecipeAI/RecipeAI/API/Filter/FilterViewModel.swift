@@ -16,9 +16,9 @@ class FilterViewModel: ObservableObject {
 
         var startLink = "https://api.edamam.com/api/recipes/v2?type=public&app_id=104e9190&app_key=ddb3653ba1ff401aa1594cbbd3bc476b&imageSize=SMALL&random=true"
         
-        let savedFilters = UserDefaults.standard.object(forKey: "filterDiet") as? [Bool]
+        let savedFilters = UserDefaults.standard.object(forKey: "filterDiet") as? [Bool] ?? [false, false, false, false, false]
         
-        for (index,dietType) in savedFilters!.enumerated() {
+        for (index,dietType) in savedFilters.enumerated() {
             
             if dietType {
                 switch index {
