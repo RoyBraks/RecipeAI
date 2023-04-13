@@ -1,32 +1,11 @@
 import SwiftUI
+import OpenAISwift
+
+
 
 struct ContentView: View {
     var body: some View {
-        TabView {
-            ExplorePage()
-                .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Explore")
-                }
-            
-            Text("Chats")
-                .tabItem {
-                    Image(systemName: "message")
-                    Text("Chat")
-                }
-            
-            Text("Groups")
-                .tabItem {
-                    Image(systemName: "person.3")
-                    Text("Groups")
-                }
-            
-            Text("Profile")
-                .tabItem {
-                    Image(systemName: "person")
-                    Text("Profile")
-                }
-        }
+    
     }
 }
 
